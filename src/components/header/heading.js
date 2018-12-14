@@ -1,0 +1,72 @@
+import React, { Component } from "react";
+import "./heading.css";
+
+export default class heading extends Component {
+  state = {
+    spacexInformation: ""
+  };
+
+  componentDidMount() {
+    console.log("Component Did Mount - Heading component ");
+
+    const sessionData = sessionStorage.getItem("spacex-infomation");
+    const headingData = JSON.parse(sessionData);
+    this.setState({ spacexInformation: headingData });
+    // console.log(headingData);
+  }
+  render() {
+    let pageInfo = <p>Loading...</p>;
+
+    if (this.state.spacexInformation) {
+      pageInfo = this.state.spacexInformation;
+
+      return (
+        <div className="row heading">
+          <div className="col-md-12 text-left">
+            <img alt="Space X logo" className="heading-image" />
+          </div>
+          <div className="col-md-6 text-left">
+            <blockquote className="blockquote">
+              <strong>...</strong> {pageInfo.summary}{" "}
+            </blockquote>
+            <p>
+              <strong />
+              <a href={pageInfo.links.website}>Space X homepage</a>
+            </p>
+          </div>
+          <div className="col-md-6 text-left">
+            <ul>
+              <li>
+                <strong>Name: </strong>
+                {pageInfo.name}
+              </li>
+              <li>
+                <strong>Founded: </strong>
+                {pageInfo.founded}
+              </li>
+              <li>
+                <strong>Employees: </strong>
+                {pageInfo.employees}
+              </li>
+              <li>
+                <strong>CEO: </strong>
+                {pageInfo.ceo}
+              </li>
+              <li>
+                <strong>Company valuation: </strong>
+                {pageInfo.valuation}$
+              </li>
+              <li>
+                <strong>Elon's Twitter: </strong>
+                <a href={pageInfo.links.elon_twitter}>
+                  {pageInfo.links.elon_twitter}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      );
+    }
+    return <div className="heading">{pageInfo}</div>;
+  }
+}

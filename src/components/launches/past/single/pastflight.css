@@ -1,0 +1,43 @@
+.mission_badge {
+  height: 200px;
+  padding-top: 20px;
+}
+
+.mission__details {
+  padding-top: 20px;
+}
+
+.launch__navigation {
+  border-bottom: 1px solid #303030;
+  border-left: 1px dotted #202020;
+  border-right: 1px dotted #202020;
+  background-color: #101010;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.navigation__buttons {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.mission__card {
+  border-bottom: 1px solid #ff8800;
+  border-left: 1px dotted #303030;
+  border-right: 1px dotted #303030;
+  background-color: #101010;
+  padding: 5px 5px;
+  border-radius: 10px;
+}
+
+.info__card {
+  padding: 5px 5px;
+  border-radius: 10px;
+}
+
+.flight_image {
+  height: 150px;
+  padding: 10px 10px;
+  margin: 20px 20px;
+  border-radius: 5px;
+}

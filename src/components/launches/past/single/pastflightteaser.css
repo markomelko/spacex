@@ -1,0 +1,24 @@
+.flight__teaser {
+  border-bottom: 1px solid #ff8800;
+  border-left: 1px dotted #ff8800;
+  border-right: 1px dotted #ff8800;
+  background-color: #101010;
+  padding: 5px 5px;
+  border-radius: 10px;
+}
+
+.flight__badge {
+  height: 150px;
+  padding-bottom: 10px;
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.padding_all_5px {
+  padding: 5px 5px;
+}
+
+.details__margin {
+  padding-top: 20px;
+  padding-left: 20px;
+}

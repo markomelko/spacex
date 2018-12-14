@@ -1,0 +1,17 @@
+.heading {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #303030;
+  border-radius: 10px;
+}
+
+.heading-image {
+  content: url("../../assets/logo.png");
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  margin-left: -40px;
+}
