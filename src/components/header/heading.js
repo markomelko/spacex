@@ -7,8 +7,6 @@ export default class heading extends Component {
   };
 
   componentDidMount() {
-    console.log("Component Did Mount - Heading component ");
-
     const sessionData = sessionStorage.getItem("spacex-infomation");
     const headingData = JSON.parse(sessionData);
     this.setState({ spacexInformation: headingData });
@@ -26,13 +24,19 @@ export default class heading extends Component {
             <img alt="Space X logo" className="heading-image" />
           </div>
           <div className="col-md-6 text-left">
-            <blockquote className="blockquote">
-              <strong>...</strong> {pageInfo.summary}{" "}
-            </blockquote>
-            <p>
-              <strong />
-              <a href={pageInfo.links.website}>Space X homepage</a>
-            </p>
+            <div className="row">
+              <div className="col mb-3">
+                <strong>...</strong> {pageInfo.summary}{" "}
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                <p>
+                  <strong />
+                  <a href={pageInfo.links.website}>Space X homepage</a>
+                </p>
+              </div>
+            </div>
           </div>
           <div className="col-md-6 text-left">
             <ul>
@@ -46,7 +50,7 @@ export default class heading extends Component {
               </li>
               <li>
                 <strong>Employees: </strong>
-                {pageInfo.employees}
+                <span className="text-success">{pageInfo.employees}</span>
               </li>
               <li>
                 <strong>CEO: </strong>
@@ -54,7 +58,7 @@ export default class heading extends Component {
               </li>
               <li>
                 <strong>Company valuation: </strong>
-                {pageInfo.valuation}$
+                <span className="text-success">{pageInfo.valuation} </span>
               </li>
               <li>
                 <strong>Elon's Twitter: </strong>

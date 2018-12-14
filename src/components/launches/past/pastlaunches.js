@@ -43,9 +43,7 @@ export class pastflights extends Component {
       <div>
         <div className="row">
           <div className="col">
-            <span className="badge badge-warning btn-block mb-2 text-left">
-              20 last space launches
-            </span>
+            <h4>30 past launch</h4>
           </div>
         </div>
         <div className="row">

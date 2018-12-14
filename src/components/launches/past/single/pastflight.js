@@ -26,8 +26,6 @@ export default class pastflight extends Component {
       sessionStorage.getItem("spacex-pastflights")
     );
 
-    console.log("current launch nro", this.props.match.params.id);
-
     let wantedLaunch = null;
     let rocketData = null;
     let wantedLaunchNro = 1;
@@ -54,6 +52,8 @@ export default class pastflight extends Component {
       rocketDetails: rocketData,
       current: wantedLaunchNro
     });
+
+    window.scrollTo(0, 0);
   }
 
   render() {
@@ -93,7 +93,7 @@ export default class pastflight extends Component {
       return (
         <div className="container">
           <div className="row launch__navigation mb-2">
-            <div className="col text-left">
+            <div className="col-md-12 col-sm-12 text-left">
               <Link
                 type="btn"
                 className="btn btn-secondary btn-sm navigation__buttons"
@@ -101,16 +101,15 @@ export default class pastflight extends Component {
               >
                 Home
               </Link>
-            </div>
-            <div className="col text-right">
+
               <a
-                className="btn btn-info btn-sm navigation__buttons"
+                className="btn btn-primary btn-sm navigation__buttons"
                 href={`/launch/${parseInt(current_launch_nro) - 1}`}
               >
                 Launch {parseInt(current_launch_nro)}
               </a>
               <a
-                className="btn btn-info btn-sm navigation__buttons"
+                className="btn btn-primary btn-sm navigation__buttons"
                 href={`/launch/${parseInt(current_launch_nro) + 1}`}
               >
                 Launch {parseInt(current_launch_nro) + 1}
@@ -127,7 +126,7 @@ export default class pastflight extends Component {
                 <li>
                   <h6>
                     Launch date:{" "}
-                    <Moment format="MM.DD.YYYY">
+                    <Moment parse="YYYY-MM-DD HH:mm">
                       {this.state.launchDetails.launch_date_local}
                     </Moment>
                   </h6>
@@ -175,7 +174,7 @@ export default class pastflight extends Component {
                 <li>
                   <h6>
                     <strong>Rocket first flight:</strong>{" "}
-                    <Moment format="MM.DD.YYYY">
+                    <Moment format="M.D.YYYY">
                       {this.state.rocketDetails.first_flight}
                     </Moment>
                   </h6>

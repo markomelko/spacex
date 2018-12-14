@@ -6,10 +6,6 @@ import Pastlaunches from "../components/launches/past/pastlaunches";
 import Chart1 from "../components/charts/chart1";
 
 export class Spacex extends Component {
-  componentDidMount() {
-    console.log("Component Did Mount - Space X container wrapper");
-  }
-
   render() {
     return (
       <div className="container">

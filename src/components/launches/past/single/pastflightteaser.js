@@ -56,8 +56,8 @@ export default class pastflightteaser extends Component {
           <div className="col-md-8 col-sm-12 mb-2 details__margin">
             <ul>
               <li>
-                <strong>Lauched date/time:</strong>{" "}
-                <Moment format="MM.DD.YYYY">
+                <strong>Lauched:</strong>{" "}
+                <Moment parse="YYYY-MM-DD HH:mm" className="text-primary">
                   {this.state.launch_date_local}
                 </Moment>
               </li>

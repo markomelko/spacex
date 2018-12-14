@@ -20,10 +20,8 @@ export default class nextlaunch extends Component {
       return (
         <div>
           <div className="row">
-            <div className="col-md-12 mb-2 text-left">
-              <span className="badge badge-info btn-block text-left">
-                Next SpaceX mission
-              </span>
+            <div className="col-md-12 text-left">
+              <h4>Next launch</h4>
             </div>
           </div>
 
@@ -39,10 +37,7 @@ export default class nextlaunch extends Component {
                 <ul>
                   <li>
                     <strong>Launch date: </strong>
-                    <Moment
-                      format="DD.MM.YYYY HH.MM.SS"
-                      className="text-primary"
-                    >
+                    <Moment parse="YYYY-MM-DD HH:mm" className="text-primary">
                       {this.state.nextflight.launch_date_local}
                     </Moment>
                   </li>
