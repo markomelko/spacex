@@ -10,6 +10,7 @@ function getAppData() {
       .then(() => getNextLaunch())
       .then(() => getPastLaunches())
       .then(() => getRockets())
+      .then(() => getUpcomingLaunches())
       .then(() => {
         resolve("Space X data ready and stored to session storage!");
       });
@@ -95,6 +96,29 @@ function getRockets() {
         .then(response => {
           sessionStorage.setItem(
             "spacex-rockets",
+            JSON.stringify(response.data)
+          );
+          resolve();
+        })
+        .catch(err => {
+          reject();
+        });
+    } else {
+      resolve();
+    }
+  });
+}
+
+function getUpcomingLaunches() {
+  const data = sessionStorage.getItem("spacex-upcoming-launches");
+
+  return new Promise((resolve, reject) => {
+    if (!data) {
+      axios
+        .get("https://api.spacexdata.com/v3/launches/upcoming")
+        .then(response => {
+          sessionStorage.setItem(
+            "spacex-upcoming-launches",
             JSON.stringify(response.data)
           );
           resolve();

@@ -1,6 +1,8 @@
 
 
 SOME POSEs?
+Deploy to S3 komentoriviltä package.json tiedostoon aws doksista
+-- bucket id:t jne pois kun pushaa gittiin
 Chart to main page from few calculated details
-Coming launches list to main page
+
 Deployment to s3? does it really work https://aws.amazon.com/blogs/mobile/deploy-a-react-app-to-s3-and-cloudfront-with-aws-mobile-hub/

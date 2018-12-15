@@ -106,13 +106,19 @@ export default class pastflight extends Component {
                 className="btn btn-primary btn-sm navigation__buttons"
                 href={`/launch/${parseInt(current_launch_nro) - 1}`}
               >
-                Launch {parseInt(current_launch_nro)}
+                Launch{" "}
+                <span className="badge badge-secondary">
+                  {parseInt(current_launch_nro) - 1}
+                </span>
               </a>
               <a
                 className="btn btn-primary btn-sm navigation__buttons"
                 href={`/launch/${parseInt(current_launch_nro) + 1}`}
               >
-                Launch {parseInt(current_launch_nro) + 1}
+                Launch{" "}
+                <span className="badge badge-secondary">
+                  {parseInt(current_launch_nro) + 1}
+                </span>{" "}
               </a>
             </div>
           </div>
@@ -120,7 +126,13 @@ export default class pastflight extends Component {
             <div className="col-md-6 text-left mb-3">
               <ul className="mission__details">
                 <li>
-                  <h5>Mission: {this.state.launchDetails.mission_name}</h5>
+                  <h5>
+                    Mission{" "}
+                    <span className="text-primary">
+                      {parseInt(current_launch_nro)}
+                    </span>{" "}
+                    - {this.state.launchDetails.mission_name}
+                  </h5>
                 </li>
 
                 <li>

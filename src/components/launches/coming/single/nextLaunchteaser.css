@@ -1,0 +1,8 @@
+.nextlaunch_teaser_container {
+  border-bottom: 1px solid #822bad;
+  border-left: 1px dotted #822bad;
+  border-right: 1px dotted #822bad;
+  background-color: #303030;
+  padding: 5px 5px;
+  border-radius: 10px;
+}

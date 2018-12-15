@@ -58,7 +58,7 @@ export default class heading extends Component {
               </li>
               <li>
                 <strong>Company valuation: </strong>
-                <span className="text-success">{pageInfo.valuation} </span>
+                <span className="text-success">{pageInfo.valuation} $ </span>
               </li>
               <li>
                 <strong>Elon's Twitter: </strong>

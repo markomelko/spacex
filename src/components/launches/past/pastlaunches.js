@@ -43,7 +43,7 @@ export class pastflights extends Component {
       <div>
         <div className="row">
           <div className="col">
-            <h4>30 past launch</h4>
+            <h4>Past launches</h4>
           </div>
         </div>
         <div className="row">

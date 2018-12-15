@@ -2,9 +2,12 @@ import React, { Component } from "react";
 
 import "./chart1.css";
 
+import { calcGetGasoline } from "../../utils/calc";
+
 export default class chart1 extends Component {
   componentDidMount() {
     // ..
+    console.log("data tests", calcGetGasoline());
   }
 
   render() {
@@ -12,7 +15,7 @@ export default class chart1 extends Component {
       <div>
         <div className="row md-3">
           <div className="col-md-12 text-left">
-            <h4>Perspective...</h4>
+            <h4>Numerically</h4>
           </div>
         </div>
         <div className="container">
