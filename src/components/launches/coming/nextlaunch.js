@@ -30,7 +30,7 @@ export default class nextlaunch extends Component {
       sessionStorage.getItem("spacex-upcoming-launches")
     );
 
-    const count = upcoming.length;
+    const count = upcoming.length; // Check why does not work!!
 
     _.tail(upcoming);
 

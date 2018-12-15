@@ -1,9 +1,22 @@
-var _ = require("lodash");
+// import { rejects } from "assert";
 
-const past = JSON.parse(sessionStorage.getItem("spacex-pastflights"));
+// var _ = require("lodash");
 
-const calcGetGasoline = () => {
-  return past[0];
-};
+// const past = JSON.parse(sessionStorage.getItem("spacex-pastflights"));
+
+let mass = 0;
+
+function calcGetGasoline(data) {
+  return new Promise((resolve, rejects) => {
+    data.map((one, index) => {
+      if (one.rocket.second_stage.payloads[0].payload_mass_kg > 0) {
+        mass = mass + one.rocket.second_stage.payloads[0].payload_mass_kg;
+      }
+      // console.log(index, past.length);
+
+      if (index >= data.length - 1) resolve(mass);
+    });
+  });
+}
 
 export { calcGetGasoline };
