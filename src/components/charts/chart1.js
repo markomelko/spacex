@@ -28,7 +28,7 @@ export default class chart1 extends Component {
         <div>
           <div className="row md-3">
             <div className="col-md-12 text-left">
-              <h4>Numbers...</h4>
+              <h4>Some stats...</h4>
             </div>
           </div>
           <div className="container">
@@ -47,15 +47,6 @@ export default class chart1 extends Component {
                     <strong>Payloads to space total mass:</strong>{" "}
                     <span className="text-primary">
                       {this.state.payload.toFixed(2)} kg
-                    </span>
-                  </li>
-                </ul>
-                <ul>
-                  <li>
-                    <strong>Continues..</strong>{" "}
-                    <span className="text-primary">
-                      There will be more calculations when time to update app,
-                      please give commets etc to marko.melko@live.com -MM{" "}
                     </span>
                   </li>
                 </ul>

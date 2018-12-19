@@ -32,9 +32,14 @@ export default class heading extends Component {
             <div className="row">
               <div className="col">
                 <p>
-                  <strong />
                   <a href={pageInfo.links.website}>Space X homepage</a>
                 </p>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col">
+                <p>Version 0.1 - 18.12.2018 Marko Melko</p>
               </div>
             </div>
           </div>
