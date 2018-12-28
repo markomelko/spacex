@@ -47,7 +47,13 @@ export default class nextlaunch extends Component {
 
       if (this.state.showrest && this.state.upcominglaunches) {
         NextFlights = this.state.upcominglaunches.map((launch, index) => {
-          return <NextLaunchElement key={launch.mission_name} data={launch} />;
+          if (index > 0) {
+            return (
+              <NextLaunchElement key={launch.mission_name} data={launch} />
+            );
+          } else {
+            return null;
+          }
         });
       }
 

@@ -30,19 +30,43 @@ export default class pastflight extends Component {
     let rocketData = null;
     let wantedLaunchNro = 1;
 
-    // Clean this mess dude!! :D
-    if (this.props.match.params.id >= pastFlights.length - 1) {
-      wantedLaunchNro = pastFlights.length - 1;
-      wantedLaunch = pastFlights[wantedLaunchNro - 1];
+    console.log("this.props.match.params.id", this.props.match.params.id);
+
+    console.log("pastFlights.length", pastFlights.length);
+
+    // Clean this mess dude...
+    if (this.props.match.params.id === pastFlights.length) {
+      // largest value...
+
+      wantedLaunchNro = pastFlights.length;
+
+      wantedLaunch = pastFlights[this.props.match.params.id - 1];
+
+      rocketData = this.getCorrectRocket(wantedLaunch.rocket.rocket_id);
+    } else if (this.props.match.params.id > pastFlights.length) {
+      console.log("uusi");
+
+      wantedLaunchNro = pastFlights.length;
+
+      wantedLaunch = pastFlights[pastFlights.length - 1];
+
       rocketData = this.getCorrectRocket(wantedLaunch.rocket.rocket_id);
     } else if (
       this.props.match.params.id === "1" ||
       this.props.match.params.id === "0"
     ) {
+      console.log("toka ehto");
       wantedLaunch = pastFlights[0];
       rocketData = this.getCorrectRocket(wantedLaunch.rocket.rocket_id);
     } else {
+      console.log("vika ehto");
+      console.log("this.props.match.params.id", this.props.match.params.id);
+
+      // most common case here
       wantedLaunchNro = this.props.match.params.id;
+
+      console.log("wantedLaunchNro", wantedLaunchNro);
+
       wantedLaunch = pastFlights[wantedLaunchNro - 1];
       rocketData = this.getCorrectRocket(wantedLaunch.rocket.rocket_id);
     }

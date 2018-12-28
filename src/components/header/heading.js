@@ -39,7 +39,10 @@ export default class heading extends Component {
 
             <div className="row">
               <div className="col">
-                <p>Version 0.1 - 18.12.2018 Marko Melko</p>
+                <small>
+                  Version 0.2 - 27.12.2018 Marko Melko Minor index fixes to past
+                  / coming launches
+                </small>
               </div>
             </div>
           </div>
