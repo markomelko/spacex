@@ -9,7 +9,8 @@ export default class pastflight extends Component {
   state = {
     launchDetails: "",
     rocketDetails: "",
-    current: ""
+    current: "",
+    last: false
   };
 
   getCorrectRocket(rocket_id) {
@@ -29,23 +30,16 @@ export default class pastflight extends Component {
     let wantedLaunch = null;
     let rocketData = null;
     let wantedLaunchNro = 1;
+    let lastLaunch = true;
 
-    console.log("this.props.match.params.id", this.props.match.params.id);
-
-    console.log("pastFlights.length", pastFlights.length);
-
-    // Clean this mess dude...
-    if (this.props.match.params.id === pastFlights.length) {
-      // largest value...
-
+    if (parseInt(this.props.match.params.id) === pastFlights.length) {
+      lastLaunch = false;
       wantedLaunchNro = pastFlights.length;
 
       wantedLaunch = pastFlights[this.props.match.params.id - 1];
 
       rocketData = this.getCorrectRocket(wantedLaunch.rocket.rocket_id);
     } else if (this.props.match.params.id > pastFlights.length) {
-      console.log("uusi");
-
       wantedLaunchNro = pastFlights.length;
 
       wantedLaunch = pastFlights[pastFlights.length - 1];
@@ -55,17 +49,11 @@ export default class pastflight extends Component {
       this.props.match.params.id === "1" ||
       this.props.match.params.id === "0"
     ) {
-      console.log("toka ehto");
       wantedLaunch = pastFlights[0];
       rocketData = this.getCorrectRocket(wantedLaunch.rocket.rocket_id);
     } else {
-      console.log("vika ehto");
-      console.log("this.props.match.params.id", this.props.match.params.id);
-
       // most common case here
       wantedLaunchNro = this.props.match.params.id;
-
-      console.log("wantedLaunchNro", wantedLaunchNro);
 
       wantedLaunch = pastFlights[wantedLaunchNro - 1];
       rocketData = this.getCorrectRocket(wantedLaunch.rocket.rocket_id);
@@ -74,7 +62,8 @@ export default class pastflight extends Component {
     this.setState({
       launchDetails: wantedLaunch,
       rocketDetails: rocketData,
-      current: wantedLaunchNro
+      current: wantedLaunchNro,
+      last: lastLaunch
     });
 
     window.scrollTo(0, 0);
@@ -127,23 +116,27 @@ export default class pastflight extends Component {
               </Link>
 
               <a
-                className="btn btn-primary btn-sm navigation__buttons"
+                className="btn btn-dark btn-sm navigation__buttons"
                 href={`/launch/${parseInt(current_launch_nro) - 1}`}
               >
-                Launch{" "}
+                Previous{" "}
                 <span className="badge badge-secondary">
                   {parseInt(current_launch_nro) - 1}
                 </span>
               </a>
-              <a
-                className="btn btn-primary btn-sm navigation__buttons"
-                href={`/launch/${parseInt(current_launch_nro) + 1}`}
-              >
-                Launch{" "}
-                <span className="badge badge-secondary">
-                  {parseInt(current_launch_nro) + 1}
-                </span>{" "}
-              </a>
+              {this.state.last ? (
+                <a
+                  className="btn btn-info btn-sm navigation__buttons"
+                  href={`/launch/${parseInt(current_launch_nro) + 1}`}
+                >
+                  Next{" "}
+                  <span className="badge badge-secondary">
+                    {parseInt(current_launch_nro) + 1}
+                  </span>{" "}
+                </a>
+              ) : (
+                ""
+              )}
             </div>
           </div>
           <div className="row">
