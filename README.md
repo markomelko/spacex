@@ -1,4 +1,6 @@
-# SpaceX ReactJS project - first ever React project from scratch
+# Project details
+
+    This was originally my first ReactJS project, maybe I continue development during autumn 2019
 
     Space is interesting thing and Elon Musk's SpaceX project is huge
     Application uses Space X API https://api.spacexdata.com
